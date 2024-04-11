@@ -1,20 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:profile_test_app/pages/profill_page.dart';
 
-import 'components/profile_drawer.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ProfillPage extends StatelessWidget {
+  const ProfillPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProfillPage(),
-    );
+    return ProfillePage();
   }
 }
 
@@ -24,8 +17,6 @@ class ProfillePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: ProfileDrawer(),
-      // ProfileDrawer
       appBar: AppBar(
         title: Text("Profille"),
       ),
