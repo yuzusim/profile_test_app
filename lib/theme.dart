@@ -18,8 +18,9 @@ const MaterialColor primaryWhite = MaterialColor(
 
 ThemeData theme() {
   return ThemeData(
-    primarySwatch: primaryWhite,
+    primarySwatch: primaryWhite, // primarySwatch 앱의 메인 컬러
     appBarTheme: AppBarTheme(
-      iconTheme: IconThemeData(color: Colors.blue),
+      iconTheme: IconThemeData(color: Colors.blue), // 테마 적용하면 모든 페이지 다 적용가능
     ),
   );
+}

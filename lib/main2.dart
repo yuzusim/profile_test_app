@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'components/Profile_tab2.dart';
 import 'components/profile_buttons.dart';
 import 'components/profile_count_info.dart';
 import 'components/profile_drawer.dart';
 import 'components/profile_header.dart';
-import 'components/profile_tab.dart';
 import 'theme.dart';
 
 void main() {
@@ -30,24 +30,21 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: ProfileDrawer(),
-        appBar: _buildProfileAppBar(),
-        body: NestedScrollView(
-          headerSliverBuilder: (context, _) {
-            return [
-              SliverList(
-                delegate: SliverChildListDelegate([
-                  ProfileHeader(),
-                  SizedBox(height: 20),
-                  ProfileCountInfo(),
-                  SizedBox(height: 20),
-                  ProfileButtons(),
-                ]),
-              ),
-            ];
-          },
-          body: ProfileTab(),
-        ));
+      // drawer: ProfileDrawer(), // 왼쪽
+      endDrawer: ProfileDrawer(),
+      appBar: _buildProfileAppBar(),
+      body: Column(
+        children: [
+          SizedBox(height: 20),
+          ProfileHeader(),
+          SizedBox(height: 20),
+          ProfileCountInfo(),
+          SizedBox(height: 20),
+          ProfileButtons(),
+          Expanded(child: Profile_tab2()),
+        ],
+      ),
+    );
   }
 
   AppBar _buildProfileAppBar() {
